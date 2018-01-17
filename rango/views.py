@@ -1,0 +1,9 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def index(request):
+	return HttpResponse("Rango says yolo")
+
+def about(request):
+	return HttpResponse("Rango says yolo is all about him")
