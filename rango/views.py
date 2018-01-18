@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import	settings
+
+
 # Create your views here.
 
 def index(request):
@@ -7,6 +10,5 @@ def index(request):
 	return render(request,'rango/index.html',context=context_dict)
 
 def about(request):
-	string = "Rango says here is the about page"
-	link = "<a href='/rango/'>Home</a>"
-	return HttpResponse(string+"\n"+link)
+	context_dict = {"MEDIA_URL":settings.MEDIA_URL}
+	return render(request,'rango/about.html',context=context_dict)

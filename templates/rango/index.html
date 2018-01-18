@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+{% load staticfiles %} 
+
 <html>
     <head>
         <title>
@@ -14,6 +16,7 @@
         </div>
         <div>
             <a href="/rango/about/">About</a><br/>
+            <img src="{% static 'images/cat_with_glasses.jpeg' %}" alt="Picture of the hacking cat" style="max-width:20%;"/>
         </div>
     </body>
 </html>
