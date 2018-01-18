@@ -3,9 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-	string = "Rango says here is the home page"
-	link = "<a href='/rango/about/'>About</a>"
-	return HttpResponse(string+"\n"+link)
+	context_dict = {"boldmessage": "Crunchy,creamy,cookie,candy,cupcake!"}
+	return render(request,'rango/index.html',context=context_dict)
 
 def about(request):
 	string = "Rango says here is the about page"
