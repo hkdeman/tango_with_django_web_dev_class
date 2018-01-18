@@ -3,7 +3,11 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-	return HttpResponse("Rango says yolo")
+	string = "Rango says here is the home page"
+	link = "<a href='/rango/about/'>About</a>"
+	return HttpResponse(string+"\n"+link)
 
 def about(request):
-	return HttpResponse("Rango says yolo is all about him")
+	string = "Rango says here is the about page"
+	link = "<a href='/rango/'>Home</a>"
+	return HttpResponse(string+"\n"+link)
