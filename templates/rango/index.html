@@ -4,19 +4,37 @@
 
 <html>
     <head>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
         <title>
             Rango
         </title>
+
+        <style>
+            .cat-image {
+                max-width:100%;
+            }
+        </style>
     </head>
     <body>
+    <div class="container">
         <h1>Rango says... </h1>
-        <div>
-            Hey there partner..! <br/>
-            <strong>{{boldmessage}}</strong><br/>
+        <div class="col-lg-12">
+            <h3 style="color:#5bc0de;"> Hey there partner..!</h3>
+            <strong style="color:#5bc0de"><h4>{{boldmessage}}</h4></strong><br>
         </div>
         <div>
-            <a href="/rango/about/">About</a><br/>
-            <img src="{% static 'images/cat_with_glasses.jpeg' %}" alt="Picture of the hacking cat" style="max-width:20%;"/>
+            <a href="/rango/about/" style="position:fixed;right:21%;"><h4>Go to About></h4></a><br>
+            <img class="cat-image"src="{% static 'images/cat_with_glasses.jpeg' %}" alt="Picture of the hacking cat"/>
         </div>
+    </div>
     </body>
 </html>
