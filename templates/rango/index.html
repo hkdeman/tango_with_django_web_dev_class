@@ -29,7 +29,33 @@
         <h1>Rango says... </h1>
         <div class="col-lg-12 col-sm-12">
             <h3 style="color:#5bc0de;"> Hey there partner..!</h3>
-            <strong style="color:#5bc0de"><h4>{{boldmessage}}</h4></strong><br>
+            <div>
+                {% if categories %}
+                <ul>
+                    <br>
+                    <h4>Most Liked Categories</h4>
+                    {% for category in categories %}
+                        <li> <a href="/rango/category/{{category.slug}}">{{category.name}}</a></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <strong>There are no categories present.</strong>
+                {% endif %}
+            </div>
+            <div>
+                    {% if pages %}
+                    <ul>
+                        <br>
+                        <h4>Most Viewed Pages</h4>
+                        {% for page in pages %}
+                            <li> <a href="{{page.url}}">{{page.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <strong>There are no pages available.</strong>
+                    {% endif %}
+                </div>
+                <br>
         </div>
 
         <div class="col-lg-12 col-sm-12">
