@@ -43,7 +43,9 @@ def populate():
 
 	cats = {"Python": {"pages":python_pages, "views":128,"likes":64},
 			"Django": {"pages":django_pages,"views":64,"likes":32},
-			"Other Frameworks":{"pages":other_pages,"views":32,"likes":16}
+			"Other Frameworks":{"pages":other_pages,"views":32,"likes":16},
+			"PHP": {"views":300,"likes":600}
+			"Laravel":{"views"250,"likes":200}
 			}
 
 	for cat,cat_data in cats.items():
