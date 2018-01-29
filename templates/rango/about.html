@@ -19,8 +19,8 @@
 
    <style>
        .cat-image {
-           width:50%;
-           margin-left:24%;
+           width:100%;
+           margin-left:10%;
        }
    </style>
 </head>
@@ -28,13 +28,21 @@
 <div class="container">
    <h1>Rango says... </h1>
    <div class="col-lg-12 col-sm-12">
-       <h3 style="color:#5bc0de;"> Hey there partner (again)..!</h3>
-       <strong style="color:#5bc0de"><h4>This tutorial was setup by the almighty Puss in Boots</h4></strong><br>
+       <div class="col-lg-6 col-sm-6">
+            <h3 style="color:#5bc0de;"> Hey there partner (again)..!</h3>
+            <strong style="color:#5bc0de"><h4>This tutorial was setup by the almighty Puss in Boots</h4></strong><br>
+       </div>
+       <div class="col-lg-6 col-sm-6">
+            <a href="/rango/" style="text-align:right;"><h3>Go to Home></h3></a>           
+       </div>
    </div>
-   <div>
-       <a href="/rango/" style="position:fixed;right:21%;top:5%;"><h4>Go to Home></h4></a><br>
-       <img class="cat-image" src="{% static 'images/rango.jpg' %}" alt="Picture of cat with glasses" /> <!-- New line -->
-       <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a cat" class="cat-image" />
+   <div class="col-lg-12 col-sm-12">
+       <div class="col-lg-6 col-sm-6">
+            <img class="cat-image" src="{% static 'images/rango.jpg' %}" alt="Picture of cat with glasses" /> <!-- New line -->
+       </div>
+       <div class="col-lg-6 col-sm-6">
+            <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a cat" class="cat-image" />           
+       </div>
    </div>
     </div>
 </body>

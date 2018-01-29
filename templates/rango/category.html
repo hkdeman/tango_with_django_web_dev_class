@@ -4,25 +4,40 @@
         <title>
             Rango
         </title>
+              
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     </head>
     <body>
-        <a href="/rango/">Back to Home</a>
-        <div>
-            {% if category %}
-                <h1> {{category.name}} </h1>
-                {% if pages %}
-                <ul>
-                    {% for page in pages %}
-                    <li><a href="{{page.url}}">{{page.title}}</a></li>
-                    {% endfor %}
-                </ul>
+        <div class="container" style="margin-top:5%;">
+            <div class="col-lg-6">
+                {% if category %}
+                    <h1> {{category.name}} </h1>
+                    {% if pages %}
+                    <ul style="margin-top:5%">
+                        {% for page in pages %}
+                        <li><a href="{{page.url}}"><h4>{{page.title}}</h4></a></li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                        <strong> No Pages currently in category. </strong>
+                    {% endif %}
+                    </ul>
                 {% else %}
-                    <strong> No Pages currently in category. </strong>
+                    <h1>The specified category does not exist</h1>
                 {% endif %}
-                </ul>
-            {% else %}
-                <h1>The specified category does not exist</h1>
-            {% endif %}
+            </div>
+            <div class="col-lg-6">
+                    <a href="/rango/"> <h3 style="text-align:right;">Back to Home</h3></a>
+                    <a href="/rango/category/{{category.slug}}/add_page/"><h4 style="text-align:right">Add Page</h4></a><br>
+            </div>
         </div>
     </body>
 </html>
