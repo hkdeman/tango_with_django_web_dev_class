@@ -1,41 +1,31 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
 
-<html>
-    <head>
-        <title>Rango</title>
-              
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% block title_block %}
+   Add a Page
+{% endblock %}
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+{% block body_block %}
+    <h1 style="text-align:center;margin-top:5%;">Add a Page</h1>
+    <div style="text-align:center;">
+        {% if category %}
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    </head>
-    <body>
-        <h1 style="text-align:center;margin-top:5%;">Add a Page</h1>
-        <div style="text-align:center;">
-            {% if category %}
-
-            <h4 style="text-align:center;"><a href="/rango/category/{{category.slug}}/">(or Go Last Category)</a></h4>  
-            <form style="margin-top:2%;" id="page_form" method="post" action="/rango/category/{{category.slug}}/add_page/">      
-                {% csrf_token %}
-                {% for hidden in form.hidden_fields %}
-                    {{hidden}}
-                {% endfor %}
-                {% for field in form.visible_fields %}
-                    {{field.errors}}
-                    <h4>{{field.help_text}}
-                    {{field}}</h4>
-                    <br>
-                {% endfor %}
-                <inputtype="submit" name="submit" value="Add Page"  class="btn btn-primary btn-lg" />
-            </form>
-            {% else %}
-                A category by this name does not exist
-            {% endif %}
-        </div>    
-    </body>
-</html>
+        <h4 style="text-align:center;"><a href="/rango/category/{{category.slug}}/">(or Go Last Category)</a></h4>  
+        <form style="margin-top:2%;" id="page_form" method="post" action="/rango/category/{{category.slug}}/add_page/">      
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{hidden}}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+                {{field.errors}}
+                <h4>{{field.help_text}}
+                {{field}}</h4>
+                <br>
+            {% endfor %}
+            <inputtype="submit" name="submit" value="Add Page"  class="btn btn-primary btn-lg" />
+        </form>
+        {% else %}
+            A category by this name does not exist
+        {% endif %}
+    </div>    
+{% endblock %}

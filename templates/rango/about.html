@@ -1,49 +1,35 @@
-<!DOCTYPE html>
-
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<html>
-<head>
-   <!-- Latest compiled and minified CSS -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% block title_block %}
+    Rango
+{% endblock %}
 
-   <!-- Optional theme -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-   <!-- Latest compiled and minified JavaScript -->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+{% block body_block %}
 
-   <title>
-       Rango
-   </title>
+<style>
+        .cat-image {
+        width:100%;
+        margin-left:10%;
+    }
+</style>
 
-   <style>
-       .cat-image {
-           width:100%;
-           margin-left:10%;
-       }
-   </style>
-</head>
-<body>
-<div class="container">
-   <h1>Rango says... </h1>
-   <div class="col-lg-12 col-sm-12">
-       <div class="col-lg-6 col-sm-6">
-            <h3 style="color:#5bc0de;"> Hey there partner (again)..!</h3>
-            <strong style="color:#5bc0de"><h4>This tutorial was setup by the almighty Puss in Boots</h4></strong><br>
-       </div>
-       <div class="col-lg-6 col-sm-6">
-            <a href="/rango/" style="text-align:right;"><h3>Go to Home></h3></a>           
-       </div>
-   </div>
-   <div class="col-lg-12 col-sm-12">
-       <div class="col-lg-6 col-sm-6">
-            <img class="cat-image" src="{% static 'images/rango.jpg' %}" alt="Picture of cat with glasses" /> <!-- New line -->
-       </div>
-       <div class="col-lg-6 col-sm-6">
-            <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a cat" class="cat-image" />           
-       </div>
-   </div>
+    <div class="container">
+    <h1>Rango says... </h1>
+    <div class="col-lg-12 col-sm-12">
+        <div class="col-lg-6 col-sm-6">
+                <h3 style="color:#5bc0de;"> Hey there partner (again)..!</h3>
+                <strong style="color:#5bc0de"><h4>This tutorial was setup by the almighty Puss in Boots</h4></strong><br>
+        </div>
     </div>
-</body>
-</html>
+    <div class="col-lg-12 col-sm-12">
+        <div class="col-lg-6 col-sm-6">
+                <img class="cat-image" src="{% static 'images/rango.jpg' %}" alt="Picture of cat with glasses" /> <!-- New line -->
+        </div>
+        <div class="col-lg-6 col-sm-6">
+                <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a cat" class="cat-image" />           
+        </div>
+    </div>
+    </div>
+{% endblock %}
