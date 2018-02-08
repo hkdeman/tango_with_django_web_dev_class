@@ -17,7 +17,13 @@
         <div class="col-lg-12 col-sm-12">
             <h1>Rango says... </h1>
             <div class="col-lg-6 col-sm-6">
-                <h3 style="color:#5bc0de;"> Hey there partner..!</h3>
+                <h3 style="color:#5bc0de;"> 
+                    {% if user.is_authenticated %}
+                        howdy {{user.username}}
+                    {% else %}
+                        hey there partner!
+                    {% endif %}
+                </h3>
             </div>
             <div class="col-lg-6 col-sm-6" style="text-align:right;">
                 <a href="{% url 'about'" ><h3>Go to About></h3></a>                
